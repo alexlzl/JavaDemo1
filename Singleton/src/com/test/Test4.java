@@ -16,16 +16,17 @@ public class Test4 {
     static String name = "rjx";
 
     static {
-        System.out.println("---------运行静态块的代码------------");
+        System.out.println("name==" + name);//name==rjx
+        System.out.println("---------运行静态块的代码------------1");
         name = "Jam";
     }
 
     {
-        System.out.println("--------运行实例块/初始化块的代码--------");
+        System.out.println("--------运行实例块/初始化块的代码--------2");
     }
 
     public X1() {
-        System.out.println("--------运行构造函数的代码-------");
+        System.out.println("--------运行构造函数的代码-------3");
         System.out.println("静态变量name现在的值是" + name);
     }
 }
