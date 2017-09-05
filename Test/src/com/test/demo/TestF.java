@@ -1,6 +1,6 @@
 package com.test.demo;
 
-public class TestF {
+public class TestF<ItemType> {
 
     //    private Param param=new Param();
     private Param param;

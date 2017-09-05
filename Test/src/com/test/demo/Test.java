@@ -2,7 +2,11 @@ package com.test.demo;
 
 import java.lang.reflect.Field;
 
-public class Test {
+public class Test extends TestF<Param> {
+
+    public Test(Param param) {
+        super(param);
+    }
 
     public static  void main(String[] args){
         System.out.println("test");
