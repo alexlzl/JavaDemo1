@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Java.iml" filepath="$PROJECT_DIR$/Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.iml" filepath="$PROJECT_DIR$/.iml" />
       <module fileurl="file://$PROJECT_DIR$/Singleton/Singleton.iml" filepath="$PROJECT_DIR$/Singleton/Singleton.iml" />
       <module fileurl="file://$PROJECT_DIR$/Test/Test.iml" filepath="$PROJECT_DIR$/Test/Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/break标签使用/break标签使用.iml" filepath="$PROJECT_DIR$/break标签使用/break标签使用.iml" />
       <module fileurl="file://$PROJECT_DIR$/对象加载/对象加载.iml" filepath="$PROJECT_DIR$/对象加载/对象加载.iml" />
       <module fileurl="file://$PROJECT_DIR$/注解/注解.iml" filepath="$PROJECT_DIR$/注解/注解.iml" />
     </modules>
