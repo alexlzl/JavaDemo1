@@ -6,4 +6,5 @@ package com.test;
 public interface BusinessProcessor {
     void processBusiness();
     void test();
+    void test1(String arg);
 }

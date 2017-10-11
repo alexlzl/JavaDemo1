@@ -25,6 +25,8 @@ import java.lang.reflect.Proxy;
  * 2，bp.processBusiness()；
  * <p>
  * 实际上调用的是$Proxy0.processBusiness();那么$Proxy0.processBusiness()的实现就是通过InvocationHandler去调用invoke方法啦!
+ * <p>
+ * 其实这里基本上就是AOP的一个简单实现了，在目标对象的方法执行之前和执行之后进行了增强。Spring的AOP实现其实也是用了Proxy和InvocationHandler这两个东西的。
  */
 public class Test {
     public static void main(String[] args) {
@@ -33,40 +35,10 @@ public class Test {
         BusinessProcessor bp = (BusinessProcessor) Proxy.newProxyInstance(bpimpl.getClass().getClassLoader(), bpimpl.getClass().getInterfaces(), handler);
         bp.processBusiness();
         bp.test();
+        bp.test1("tsss");
         System.out.println(bp.getClass().getName());//com.sun.proxy.$Proxy0
         Class clz = bp.getClass();
         printClassDefinition(clz);
-    }
-
-    public static String getModifier(int modifier) {
-        String result = "";
-        switch (modifier) {
-            case Modifier.PRIVATE:
-                result = "private";
-            case Modifier.PUBLIC:
-                result = "public";
-            case Modifier.PROTECTED:
-                result = "protected";
-            case Modifier.ABSTRACT:
-                result = "abstract";
-            case Modifier.FINAL:
-                result = "final";
-            case Modifier.NATIVE:
-                result = "native";
-            case Modifier.STATIC:
-                result = "static";
-            case Modifier.SYNCHRONIZED:
-                result = "synchronized";
-            case Modifier.STRICT:
-                result = "strict";
-            case Modifier.TRANSIENT:
-                result = "transient";
-            case Modifier.VOLATILE:
-                result = "volatile";
-            case Modifier.INTERFACE:
-                result = "interface";
-        }
-        return result;
     }
 
     public static void printClassDefinition(Class clz) {
@@ -153,4 +125,37 @@ public class Test {
         }
         System.out.println("}");
     }
+
+    public static String getModifier(int modifier) {
+        String result = "";
+        switch (modifier) {
+            case Modifier.PRIVATE:
+                result = "private";
+            case Modifier.PUBLIC:
+                result = "public";
+            case Modifier.PROTECTED:
+                result = "protected";
+            case Modifier.ABSTRACT:
+                result = "abstract";
+            case Modifier.FINAL:
+                result = "final";
+            case Modifier.NATIVE:
+                result = "native";
+            case Modifier.STATIC:
+                result = "static";
+            case Modifier.SYNCHRONIZED:
+                result = "synchronized";
+            case Modifier.STRICT:
+                result = "strict";
+            case Modifier.TRANSIENT:
+                result = "transient";
+            case Modifier.VOLATILE:
+                result = "volatile";
+            case Modifier.INTERFACE:
+                result = "interface";
+        }
+        return result;
+    }
+
+
 }

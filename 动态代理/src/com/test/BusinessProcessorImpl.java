@@ -13,4 +13,9 @@ public class BusinessProcessorImpl implements BusinessProcessor {
     public void test() {
         System.out.println("执行test方法=============");
     }
+
+    @Override
+    public void test1(String arg) {
+        System.out.println("执行test1方法=============");
+    }
 }
