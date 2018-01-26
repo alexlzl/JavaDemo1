@@ -14,7 +14,7 @@ import java.io.Serializable;
  */
 public class Employee implements Serializable {
     //serialVersionUID 就是控制版本是否兼容的，若我们认为修改的 Person 是向后兼容的，则不修改 serialVersionUID；反之，则提高 serialVersionUID的值。再回到一开始的问题，为什么 ide 会提示声明 serialVersionUID 的值呢？
-    private static final long serialVersionUID = 2L;
+    private static final long serialVersionUID = 3L;
     private String name;
     private int id;
     //如果你想要某个对象属性不被序列化成流，你可以使用transient关键字，正如示例中我在salary变量上的做法那样。
