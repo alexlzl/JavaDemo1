@@ -15,9 +15,13 @@ public class SerializationTest {
     public static void main(String[] args) {
         String fileName = "employee.ser";
         Employee emp = new Employee();
+        Child child=new Child();
+        child.age=100;
+        child.time=2011;
         emp.setId(100);
         emp.setName("Pankaj");
         emp.setSalary(5000);
+        emp.child=child;
 
 //        serialize to file
         try {
