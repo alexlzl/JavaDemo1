@@ -51,7 +51,7 @@ public class Husband implements Cloneable{
      * @throws CloneNotSupportedException
      */
     @Override
-    protected Object clone() throws CloneNotSupportedException {
+    public Object clone() throws CloneNotSupportedException {
         Husband husband = (Husband) super.clone();
         husband.wife = (Wife) husband.getWife().clone();
         return husband;

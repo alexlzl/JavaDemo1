@@ -9,7 +9,7 @@ package com.test;
  * <p>
  * 举例区别一下：对象A1中包含对B1的引用，B1中包含对C1的引用。浅拷贝A1得到A2，A2中依然包含对B1的引用，B1中依然包含对C1的引用。深拷贝则是对浅拷贝的递归，深拷贝A1得到A2，A2中包含对B2（B1的copy）的引用，B2中包含对C2（C1的copy）的引用。
  */
-public class Wife implements Cloneable{
+public class Wife implements Cloneable {
     private int id;
     private String name;
 
@@ -69,7 +69,10 @@ public class Wife implements Cloneable{
 
     /**
      * @param args
-     * @throws CloneNotSupportedException
+     * @throws CloneNotSupportedException （1）x.clone() != x 必须为真，也就是对于基础类型来说，其克隆后在堆中有两个独立且内容相同的内存区域。而对于引用类型来说，其引用也不相同。也就是说克隆对象和原始对象在java 堆(heap)中是两个独立的对象
+     *                                    （2）x.clone().getClass() == x.getClass()  他们所属的类是同一个
+     *                                    （3） x.clone().equals(x)   所比较的对象内容相同
+     *                                    从上述的第二和第三点可以看出，克隆完全是拷贝一个独立的副本到内存中。但是由于克隆方法可以覆写，所以并不能保证克隆出来的对象能够达到（2）和（3）要求的标准，所以他们不是克隆方法所必须要求的
      */
     public static void main(String[] args) throws CloneNotSupportedException {
         Wife wife = new Wife(1, "wang");
